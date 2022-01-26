@@ -38,8 +38,8 @@ plt.show()
 with open('BigData2016 (1).csv', newline='') as csvfile:
     reader = csv.DictReader(csvfile)
 
-    x = [*range (1,367,1)]
-    ARD2_y = []
+    x = [*range (1,367,1)] #x-axis
+    ARD2_y = [] #y-axis
     BEAV_y = []
     BOIS_y = []
     CENT_y = []
@@ -49,6 +49,7 @@ with open('BigData2016 (1).csv', newline='') as csvfile:
     TULN_y = []
     WOOD_y = []
 
+    #Adding values of each station to their y-axis list
     for row in reader:
         if row['STID'] == 'ARD2':
             if float(row['TMAX']) < 0:
@@ -104,7 +105,8 @@ with open('BigData2016 (1).csv', newline='') as csvfile:
 
             WOOD_y.append(float(row['TMAX']))
 
-    plt.plot(x, ARD2_y, label = 'ARD2')
+    #calling to plot them
+    plt.plot(x, ARD2_y, label = 'ARD2') 
     plt.plot(x, BEAV_y, label = 'BEAV')
     plt.plot(x, BOIS_y, label = 'BOIS')
     plt.plot(x, CENT_y, label = 'CENT')
