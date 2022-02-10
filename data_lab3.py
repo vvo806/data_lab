@@ -54,7 +54,6 @@ with open('BigData2016 (1).csv', newline='') as csvfile:
         if row['STID'] == 'ARD2':
             if float(row['TMAX']) < 0:
                 row['TMAX'] = 0
-
             ARD2_y.append(float(row['TMAX']))
 
         if row['STID'] == 'BEAV':
@@ -128,48 +127,3 @@ with open('BigData2016 (1).csv', newline='') as csvfile:
 
     # function to show the plot
     plt.show()
-
-
-
-'''
-    for row in reader:
-        station = 'ARD2'
-        num = float(row('TMAX'[station]))
-        if num < 0:
-            num = 'None'
-
-        ARD2_y.append(float(row('TMAX'['ARD2'])))
-
-
-    plt.plot(ARD2_x, ARD2_y, label = "ARD2")
-
-    # naming the x axis
-    plt.xlabel('Day')
-    # naming the y axis
-    plt.ylabel('Temperature')
-    # giving a title to my graph
-    plt.title('Temperature of 9 Stations')
-
-    # show a legend on the plot
-    plt.legend()
- 
-    # function to show the plot
-    plt.show()
-'''
-
-'''
-    num = ARD2_x[0]
-
-    for n in ARD2_x:
-        if n > num:
-            num = n
-
-    print(f"Highest max = {num}")
-
-
-with open('BigData2016 (1).csv', newline = '') as csvfile:
-    reader = csv.DictReader(csvfile)
-
-    for row in reader:
-        print(f"TMAX = {row['TMAX']}, TMIN = {row['TMIN']}")
-'''
